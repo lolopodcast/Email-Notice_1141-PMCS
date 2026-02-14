@@ -22,7 +22,7 @@
                             dark: '#1e1e1e',
                             light: '#f3f4f6',
                             textDark: '#e5e7eb',
-                            textLight: '#1f2937'
+                            textLight: '#111827' // Darker text for light mode
                         }
                     },
                     fontFamily: {
@@ -37,7 +37,7 @@
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         
-        body, header, footer, div, span, p, h1, h2, h3, button, nav, a, li, ul {
+        body, header, footer, div, span, p, h1, h2, h3, button, nav, a, li, ul, label {
             transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
 
@@ -73,7 +73,7 @@
         }
     </style>
 </head>
-<body class="flex flex-col min-h-screen bg-bcg-dark text-bcg-textDark font-sans dark transition-colors duration-300">
+<body class="flex flex-col min-h-screen bg-white dark:bg-bcg-dark text-gray-900 dark:text-bcg-textDark font-sans dark transition-colors duration-300">
 
     <!-- HEADER (Compact Height: h-14) -->
     <header class="fixed w-full top-0 z-50 h-14 flex items-center justify-between px-3 md:px-6 bg-white dark:bg-black/95 shadow-md border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
@@ -81,7 +81,7 @@
         <!-- Left: Menu & Brand -->
         <div class="flex items-center h-full">
             <!-- Hamburger -->
-            <button id="menu-btn" class="text-gray-600 dark:text-gray-300 hover:text-bcg-green focus:outline-none transition p-2 mr-2">
+            <button id="menu-btn" class="text-gray-700 dark:text-gray-300 hover:text-bcg-green focus:outline-none transition p-2 mr-2">
                 <i class="fas fa-bars text-lg"></i>
             </button>
             
@@ -93,11 +93,11 @@
             <!-- Course Names (Stacked) - Hidden on very small screens -->
             <div class="hidden lg:flex flex-col justify-center h-full py-1">
                 <!-- CN Name (Top, Small) -->
-                <div class="text-[10px] text-gray-500 dark:text-gray-400 font-medium leading-none mb-0.5">
+                <div class="text-[10px] text-gray-600 dark:text-gray-400 font-medium leading-none mb-0.5">
                     AI世代產品經理職涯策略與專案管理導論
                 </div>
                 <!-- EN Name (Bottom, 2 Lines) -->
-                <div class="text-[9px] text-gray-400 dark:text-gray-500 leading-tight">
+                <div class="text-[9px] text-gray-500 dark:text-gray-500 leading-tight">
                     Introduction to Project Management and<br>Career Strategy of a Product Manager in the AI Era
                 </div>
             </div>
@@ -112,17 +112,17 @@
         <!-- Right: Tools -->
         <div class="flex items-center space-x-2">
              <!-- Audio Toggle -->
-             <button id="audio-btn" class="w-7 h-7 rounded-full flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-bcg-green hover:bg-gray-100 dark:hover:bg-white/10 transition" title="Audio Guide">
+             <button id="audio-btn" class="w-7 h-7 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-bcg-green hover:bg-gray-100 dark:hover:bg-white/10 transition" title="Audio Guide">
                 <i class="fas fa-headphones text-sm"></i>
             </button>
 
             <!-- Theme Toggle -->
-            <button id="theme-toggle" class="w-7 h-7 rounded-full flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-yellow-500 hover:bg-gray-100 dark:hover:bg-white/10 transition">
+            <button id="theme-toggle" class="w-7 h-7 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-yellow-500 hover:bg-gray-100 dark:hover:bg-white/10 transition">
                 <i class="fas fa-sun text-sm"></i>
             </button>
 
             <!-- Lang Toggle -->
-            <button id="lang-toggle" class="text-[10px] font-bold border border-gray-400 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded px-1.5 py-0.5 hover:border-bcg-green hover:text-bcg-green transition whitespace-nowrap bg-transparent">
+            <button id="lang-toggle" class="text-[10px] font-bold border border-gray-400 dark:border-gray-600 text-gray-800 dark:text-gray-300 rounded px-1.5 py-0.5 hover:border-bcg-green hover:text-bcg-green transition whitespace-nowrap bg-transparent">
                 ENG/繁中
             </button>
         </div>
@@ -143,7 +143,7 @@
         <!-- Sidebar Header -->
         <div class="h-14 flex items-center justify-between px-6 border-b border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-black/20">
             <span class="font-bold text-lg text-gray-800 dark:text-white tracking-widest">MENU</span>
-            <button id="close-btn" class="text-gray-500 hover:text-red-500 p-2">
+            <button id="close-btn" class="text-gray-600 hover:text-red-500 p-2">
                 <i class="fas fa-times text-xl"></i>
             </button>
         </div>
@@ -155,7 +155,7 @@
                     <span class="lang-en">Overview</span><span class="lang-zh hidden">綜覽</span>
                 </div>
             </a>
-            <a href="#" onclick="switchSection('w1w2')" id="nav-w1w2" class="block px-6 py-4 border-l-4 border-transparent text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-white/5 transition">
+            <a href="#" onclick="switchSection('w1w2')" id="nav-w1w2" class="block px-6 py-4 border-l-4 border-transparent text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-white/5 transition">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center">
                         <span class="w-6 text-center mr-3"><i class="fas fa-flag"></i></span>
@@ -168,18 +168,18 @@
                 </div>
             </a>
             
-             <a href="#" onclick="switchSection('w3w5')" id="nav-w3w5" class="block px-6 py-4 border-l-4 border-transparent text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-white/5 transition">
+             <a href="#" onclick="switchSection('w3w5')" id="nav-w3w5" class="block px-6 py-4 border-l-4 border-transparent text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-white/5 transition">
                 <div class="flex items-center">
                     <span class="w-6 text-center mr-3"><i class="fas fa-robot"></i></span>
                     <div>
                         <span class="lang-en">W3-5</span><span class="lang-zh hidden">第三至五週</span>
-                        <div class="text-[10px] text-gray-400 mt-1">GenAI</div>
+                        <div class="text-[10px] text-gray-500 dark:text-gray-400 mt-1">GenAI</div>
                     </div>
                 </div>
             </a>
 
             <!-- Future Modules -->
-            <div class="px-6 mt-6 mb-2 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Upcoming</div>
+            <div class="px-6 mt-6 mb-2 text-[10px] font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Upcoming</div>
             <a href="#" class="block px-6 py-3 text-gray-400 cursor-not-allowed flex items-center opacity-50"><i class="fas fa-briefcase w-6 mr-3"></i> W6-8 PM Role</a>
             <a href="#" class="block px-6 py-3 text-gray-400 cursor-not-allowed flex items-center opacity-50"><i class="fas fa-rocket w-6 mr-3"></i> W9 & 16 Project</a>
             <a href="#" class="block px-6 py-3 text-gray-400 cursor-not-allowed flex items-center opacity-50"><i class="fas fa-compass w-6 mr-3"></i> W10-12 Career</a>
@@ -230,9 +230,9 @@
                         <span class="lang-en">Comprehensive guide to grading, schedule, and expectations.</span>
                         <span class="lang-zh hidden">包含完整評分標準、課程進度表與課堂預期。</span>
                     </p>
-                    <button class="text-xs font-bold text-bcg-green uppercase tracking-wide border border-bcg-green px-3 py-1 rounded hover:bg-bcg-green hover:text-white transition">
+                    <a href="https://drive.google.com/file/d/1Y6D0SMn6JhbDVcPUAYE2LUvjY2ClXSub/view?usp=drive_link" target="_blank" class="inline-block text-xs font-bold text-bcg-green uppercase tracking-wide border border-bcg-green px-3 py-1 rounded hover:bg-bcg-green hover:text-white transition">
                         Download PDF
-                    </button>
+                    </a>
                 </div>
 
                 <!-- 1141 Showcase -->
@@ -268,7 +268,7 @@
                 <button onclick="switchTab('w1-pre')" id="tab-w1-pre" class="px-4 py-2 text-sm font-medium border-b-2 border-bcg-green text-bcg-green transition">
                     Pre W1 #1 (02/14)
                 </button>
-                <button onclick="switchTab('w1-post')" id="tab-w1-post" class="px-4 py-2 text-sm font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition">
+                <button onclick="switchTab('w1-post')" id="tab-w1-post" class="px-4 py-2 text-sm font-medium border-b-2 border-transparent text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition">
                     Post W1 #2 (TBD)
                 </button>
             </div>
@@ -277,13 +277,13 @@
             <div id="content-w1-pre">
                 <!-- Alert Banner -->
                 <div class="bg-red-50 dark:bg-red-900/10 border-l-4 border-red-500 p-6 mb-8 rounded-r-md shadow-sm">
-                    <h4 class="text-red-600 dark:text-red-400 font-bold uppercase tracking-wider text-xs mb-4 flex items-center">
+                    <h4 class="text-red-700 dark:text-red-400 font-bold uppercase tracking-wider text-xs mb-4 flex items-center">
                         <i class="fas fa-bell mr-2"></i>
                         <span class="lang-en">Critical Alerts & Expectations</span><span class="lang-zh hidden">重要選課須知與預期管理</span>
                     </h4>
                     <ul class="space-y-4 text-sm text-gray-800 dark:text-gray-300">
                         <li class="flex items-start">
-                            <i class="fas fa-exclamation-circle mt-1 mr-3 text-red-500 shrink-0"></i>
+                            <i class="fas fa-exclamation-circle mt-1 mr-3 text-red-600 dark:text-red-500 shrink-0"></i>
                             <div>
                                 <strong class="block text-gray-900 dark:text-white mb-1"><span class="lang-en">1. English Proficiency B1+ Required</span><span class="lang-zh hidden">1. 英語能力要求 B1+</span></strong>
                                 <span class="lang-en">This is an EMI course. Weekly oral presentations and group discussions in English are mandatory. You must speak up every week.</span>
@@ -291,7 +291,7 @@
                             </div>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-exclamation-circle mt-1 mr-3 text-red-500 shrink-0"></i>
+                            <i class="fas fa-exclamation-circle mt-1 mr-3 text-red-600 dark:text-red-500 shrink-0"></i>
                             <div>
                                 <strong class="block text-gray-900 dark:text-white mb-1"><span class="lang-en">2. High Workload & Attendance</span><span class="lang-zh hidden">2. 高強度投入與出席要求</span></strong>
                                 <span class="lang-en">Groups will be formed in Week 1. If you must be absent on 2/25, please submit a leave request on Moodle in advance.</span>
@@ -299,7 +299,7 @@
                             </div>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-laptop mt-1 mr-3 text-red-500 shrink-0"></i>
+                            <i class="fas fa-laptop mt-1 mr-3 text-red-600 dark:text-red-500 shrink-0"></i>
                             <div>
                                 <strong class="block text-gray-900 dark:text-white mb-1"><span class="lang-en">3. Bring Your Device</span><span class="lang-zh hidden">3. 務必攜帶筆電或平板</span></strong>
                                 <span class="lang-en">Please bring a laptop or tablet every week for GenAI practice.</span>
@@ -307,7 +307,7 @@
                             </div>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-sign-out-alt mt-1 mr-3 text-red-500 shrink-0"></i>
+                            <i class="fas fa-sign-out-alt mt-1 mr-3 text-red-600 dark:text-red-500 shrink-0"></i>
                             <div>
                                 <strong class="block text-gray-900 dark:text-white mb-1"><span class="lang-en">Drop Policy</span><span class="lang-zh hidden">退選建議機制</span></strong>
                                 <span class="lang-en">If you feel unprepared or overwhelmed, please drop the course early to allow waitlisted students to join.</span>
@@ -370,9 +370,17 @@
                                 <span class="block text-gray-900 dark:text-white font-bold mb-1">
                                     <span class="lang-en">2. Read Syllabus & Bio</span><span class="lang-zh hidden">2. 閱讀課程大綱與簡歷</span>
                                 </span>
-                                <span class="text-sm text-gray-700 dark:text-gray-400">
-                                    <span class="lang-en">Understand grading policy (Syllabus) and instructor background (Bio).</span><span class="lang-zh hidden">了解評分標準 (Syllabus) 與講師背景 (Bio)。</span>
+                                <span class="text-sm text-gray-700 dark:text-gray-400 mb-2 block">
+                                    <span class="lang-en">Understand grading policy and instructor background.</span><span class="lang-zh hidden">了解評分標準與講師背景。</span>
                                 </span>
+                                <div class="flex space-x-2">
+                                    <a href="https://drive.google.com/file/d/1Y6D0SMn6JhbDVcPUAYE2LUvjY2ClXSub/view?usp=drive_link" target="_blank" class="inline-flex items-center text-xs text-gray-600 dark:text-gray-300 hover:text-bcg-green hover:underline border border-gray-300 dark:border-gray-600 px-2 py-1 rounded">
+                                        <i class="fas fa-book mr-1"></i> Syllabus
+                                    </a>
+                                    <a href="https://drive.google.com/file/d/1H0UeqOG2sax8frL12roHHTeDqqh2a6x1/view?usp=drive_link" target="_blank" class="inline-flex items-center text-xs text-gray-600 dark:text-gray-300 hover:text-bcg-green hover:underline border border-gray-300 dark:border-gray-600 px-2 py-1 rounded">
+                                        <i class="fas fa-user-tie mr-1"></i> Bio
+                                    </a>
+                                </div>
                             </div>
                         </label>
 
@@ -411,19 +419,29 @@
                                     <span class="lang-en">Must be **Handwritten** (on paper or tablet). Take a photo and upload to Moodle.</span>
                                     <span class="lang-zh hidden">必須**手寫** (紙本或平板皆可)。拍照後上傳至 Moodle 繳交區。</span>
                                 </div>
-                                <div class="text-xs text-gray-600 dark:text-gray-400 font-mono bg-white dark:bg-black/30 inline-block px-2 py-1 rounded border border-gray-200 dark:border-transparent">
-                                    File Name: [PMCS] ID_Name_W1
+                                <div class="flex flex-wrap items-center gap-2">
+                                     <a href="https://drive.google.com/file/d/1aFkw5XePHUSBHV1AjGyfIopMeMgf-F9s/view?usp=drive_link" target="_blank" class="inline-flex items-center text-xs font-bold text-bcg-green hover:underline bg-white dark:bg-black/50 border border-bcg-green px-2 py-1 rounded">
+                                        <i class="fas fa-download mr-1"></i> Download Worksheet
+                                    </a>
+                                    <span class="text-xs text-gray-600 dark:text-gray-400 font-mono bg-white dark:bg-black/30 px-2 py-1 rounded border border-gray-200 dark:border-transparent">
+                                        File Name: [PMCS] ID_Name_W1
+                                    </span>
                                 </div>
                             </div>
                         </label>
                     </div>
 
-                    <!-- Progress Counter -->
-                    <div class="bg-gray-50 dark:bg-black/20 px-6 py-3 border-t border-gray-200 dark:border-gray-700 text-right">
-                        <span class="text-xs font-mono text-gray-600 dark:text-gray-400">
-                            <span id="checked-count" class="font-bold text-bcg-green">0</span>/<span id="total-count">4</span> 
-                            <span class="lang-en">Completed</span><span class="lang-zh hidden">已完成</span>
-                        </span>
+                    <!-- Visual Progress Bar (Thermometer Style) -->
+                    <div class="bg-gray-50 dark:bg-black/20 px-6 py-4 border-t border-gray-300 dark:border-gray-700">
+                        <div class="flex flex-col items-center justify-center">
+                            <div class="w-full max-w-xs h-4 bg-gray-300 dark:bg-gray-700 rounded-full overflow-hidden relative shadow-inner">
+                                <div id="progress-bar" class="h-full bg-gradient-to-r from-bcg-green to-green-400 transition-all duration-500 ease-out" style="width: 0%"></div>
+                            </div>
+                            <div class="mt-2 text-xs font-bold text-gray-600 dark:text-gray-400 uppercase tracking-widest">
+                                <span class="lang-en">Progress</span><span class="lang-zh hidden">完成進度</span>: 
+                                <span id="checked-count" class="text-bcg-green text-sm">0</span> / <span id="total-count">4</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -431,7 +449,7 @@
             <!-- Post W1 Content (TBD) -->
             <div id="content-w1-post" class="hidden">
                  <div class="tbd-card border border-dashed border-gray-300 dark:border-gray-600 rounded-lg h-48 flex flex-col items-center justify-center p-6 text-center">
-                    <i class="fas fa-hourglass-half text-3xl text-gray-300 dark:text-gray-600 mb-3"></i>
+                    <i class="fas fa-hourglass-half text-3xl text-gray-400 dark:text-gray-600 mb-3"></i>
                     <h3 class="text-lg font-bold text-gray-500 dark:text-gray-400">Post-Class Content</h3>
                     <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
                         <span class="lang-en">Will be available after W1 class</span><span class="lang-zh hidden">第一週課後開放</span>
@@ -465,9 +483,9 @@
     <footer class="fixed bottom-0 w-full h-14 bg-white dark:bg-black/95 border-t border-gray-200 dark:border-gray-800 flex items-center justify-between px-3 md:px-6 z-50 text-xs transition-colors duration-300">
         <!-- Left: Version & Instructor -->
         <div class="flex flex-col space-y-0.5">
-            <span class="text-[9px] text-gray-400 dark:text-gray-500 font-mono">v2026.02.14 &copy; NCNU</span>
+            <span class="text-[9px] text-gray-500 dark:text-gray-500 font-mono">v2026.02.14 &copy; NCNU</span>
             <div class="flex items-center space-x-1">
-                <span class="text-gray-500 uppercase font-bold text-[9px]">Inst.</span>
+                <span class="text-gray-600 dark:text-gray-500 uppercase font-bold text-[9px]">Inst.</span>
                 <a href="https://www.ibs.ncnu.edu.tw/index.php/faculty/tenured-professor/299-smlo" target="_blank" class="text-gray-800 dark:text-gray-300 hover:text-bcg-green dark:hover:text-white hover:underline transition font-medium">
                     Prof. Shihmin Lo
                 </a>
@@ -508,6 +526,7 @@
         const checklistInputs = document.querySelectorAll('#checklist-container input[type="checkbox"]');
         const checkedCountEl = document.getElementById('checked-count');
         const totalCountEl = document.getElementById('total-count');
+        const progressBar = document.getElementById('progress-bar');
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('overlay');
 
@@ -531,10 +550,10 @@
             // Tailwind class mode handles most, but body needs manual switch for full page bg
             if(!isDarkMode) {
                 document.body.classList.remove('bg-bcg-dark', 'text-bcg-textDark');
-                document.body.classList.add('bg-bcg-light', 'text-bcg-textLight');
+                document.body.classList.add('bg-white', 'text-gray-900');
             } else {
                 document.body.classList.add('bg-bcg-dark', 'text-bcg-textDark');
-                document.body.classList.remove('bg-bcg-light', 'text-bcg-textLight');
+                document.body.classList.remove('bg-white', 'text-gray-900');
             }
         });
 
@@ -706,13 +725,20 @@
         document.getElementById('close-btn').addEventListener('click', toggleSidebar); // Close Btn Listener
         document.getElementById('overlay').addEventListener('click', toggleSidebar);
 
-        // 6. Checklist
+        // 6. Checklist & Thermometer Logic
         checklistInputs.forEach(input => input.addEventListener('change', updateChecklistCounter));
+        
         function updateChecklistCounter() {
             const checked = document.querySelectorAll('#checklist-container input[type="checkbox"]:checked').length;
             const total = checklistInputs.length;
+            
+            // Update Text
             checkedCountEl.textContent = checked;
             totalCountEl.textContent = total;
+
+            // Update Thermometer Bar
+            const percentage = Math.round((checked / total) * 100);
+            progressBar.style.width = percentage + '%';
         }
 
         // Init Voice Load
